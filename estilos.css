@@ -1,13 +1,16 @@
 .grid{
   display: grid;
-  grid-template-columns: repeat(12, 1fr); 
-  gap: 8px; 
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
 }
 
-[class*="col-"] {
+[class*="columns-"] {
   padding: 8px;
-  border: 1px solid #ccc;
-  text-align: center;
+  color: white; 
+  font-family: sans-serif; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 .flex{
@@ -15,102 +18,152 @@
   width: 100%;
 }
 
+/* ESCRITORIO */
+@media screen and (min-width: 1280px) {
+  .grid{
+    display: grid;
+    grid-template-rows: 110px 110px 270px 110px;
+    gap: 8px;
+  }
 
-.row{
-  display:flex;
-  flex-wrap: wrap;
-  background:greenyellow;
-  
-}
+  .grid * {
+    margin-top: 10px;
+    border-radius: 10px;
+  }
 
-.grid{
-  background:greenyellow;
-}
-.grid *,
-.flex .row * {
-  background: pink;
-  border: 1px solid #000000;
-  margin-top: 10px;
-}
-/*Establecer Grid*/
-.flex .columns-12 {
-  flex: 0 0 calc((100% / 12) * 12);
-}
-.flex .columns-11 {
-  flex: 0 0 calc((100% / 12) * 11);
-}
-.flex  .columns-10 {
-  flex: 0 0 calc((100% / 12) * 10);
-}
-.flex  .columns-9 {
-  flex: 0 0 calc((100% / 12) * 9);
-}
-.flex  .columns-8 {
-  flex: 0 0 calc((100% / 12) * 8);
-}
-.flex  .columns-7 {
-  flex: 0 0 calc((100% / 12) * 7);
-}
-.flex  .columns-6 {
-  flex: 0 0 calc((100% / 12) * 6);
-}
-.flex  .columns-5 {
-  flex: 0 0 calc((100% / 12) * 5);
-}
-.flex  .columns-4 {
-  flex: 0 0 calc((100% / 12) * 4);
-}
-.flex  .columns-3 {
-  flex: 0 0 calc((100% / 12) * 3);
-}
-.flex  .columns-2 {
-  flex: 0 0 calc((100% / 12) * 2);
-}
-.flex  .columns-1 {
-  flex: 0 0 calc((100% / 12) * 1);
-}
-
-
-
-/*Completar*/
-@media screen and (min-width: 768px){
-  .grid .columns-12 {
-    grid-column: span 12; 
-  }
-  .grid .columns-11 {
-    grid-column: span 11;
-  }
-  .grid  .columns-10 {
-    grid-column: span 10;
-  }
-  .grid  .columns-9 {
-    grid-column: span 9;
-  }
-  .grid  .columns-8 {
-    grid-column: span 8;
-  }
-  .grid  .columns-7 {
-    grid-column: span 7;
-  }
-  .grid .columns-6 {
-    grid-column: span 6;
-  }
-  .grid  .columns-5 {
-    grid-column: span 5;
-  }
-  .grid .columns-4 {
-    grid-column: span 4;
-  }
-  .grid .columns-3 {
+  .columns-1 {
     grid-column: span 3;
+    background:blue;
   }
-  .grid .columns-2 {
-    grid-column: span 2;
+
+  .columns-2 {
+    grid-column: span 3;
+    background:blue;
   }
-  .grid .columns-1 {
-    grid-column: span 1;
-  } 
+
+  .columns-3 {
+    grid-column: span 6;
+    background:blue;
+  }
+
+  .columns-4 {
+    grid-column: span 6;
+    background:lawngreen;
+  }
+
+  .columns-5 {
+    grid-column: span 6;
+    background:lawngreen;
+  }
+
+  .columns-6 {
+    grid-column: span 8;
+    background:red;
+  }
+
+  .columns-7 {
+    grid-column: span 4;
+    background:deeppink;
+  }
+
+  .columns-8{
+    grid-column: span 12;
+    background:yellow;
+    color: black; 
+  }
 }
-.grid * {
-  grid-column: span 12;
+
+/* TABLET */
+@media screen and (min-width: 769px) and (max-width:1279px){
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 110px 200px 200px 240px;
+    gap: 8px;
+  }
+
+  .grid * {
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .columns-1 {
+    grid-column: span 4;
+    background:blue;
+  }
+
+  .columns-2 {
+    grid-column: span 4;
+    background:blue;
+  }
+
+  .columns-3 {
+    grid-column: span 4;
+    background:blue;
+  }
+
+  .columns-4 {
+    grid-column: span 12;
+    background:lawngreen;
+  }
+
+  .columns-5 {
+    grid-column: span 12;
+    background:lawngreen;
+  }
+
+  .columns-6 {
+    grid-column: span 2;
+    background:red;
+
+  }
+
+  .columns-7 {
+    grid-column: span 7;
+    background: deeppink;
+    
+  }
+
+  .columns-8{
+    grid-column: span 3;
+    background:yellow;
+    color: black; 
+  }
+}
+
+/* CELULAR */
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; 
+    gap: 8px;
+  }
+  
+
+  [class*="columns-"] {
+    grid-column: span 1;
+    height: 70px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .columns-1, .columns-2, .columns-3 {
+    background:blue;
+  }
+
+  .columns-4, .columns-5 {
+    background:lawngreen;
+  }
+
+  .columns-6 {
+    background:red;
+  }
+
+  .columns-7 {
+    background:deeppink;
+  }
+
+  .columns-8{
+    background:yellow;
+    color: black; 
+  }
 }
